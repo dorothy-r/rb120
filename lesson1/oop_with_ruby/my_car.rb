@@ -11,11 +11,18 @@ the year of your car.
 3. You want to create a nice interface that allows you to accurately describe the 
 action you want your program to perform. Create a method called `spray_paint`
 that can be called on an object and will modify the color of the car.
+4. Add a class method to your MyCar class that calculates the gas mileage of any
+car.
+5. Override the `to_s` method to create a user-friendly print out of your object.
 =end
 
 class MyCar
   attr_accessor :color
-  attr_reader :year
+  attr_reader :year, :model
+
+  def self.mileage(gallons, miles)
+    puts "#{miles/gallons} mpg"
+  end
 
   def initialize(year, model, color)
     @year = year
@@ -43,6 +50,10 @@ class MyCar
     self.color = color
     puts "Your new #{color} paint job looks great!"
   end
+
+  def to_s
+    "A #{color} #{year} #{model}"
+  end
 end
 
 honda = MyCar.new(2010, "honda fit", "blue")
@@ -55,3 +66,7 @@ puts honda.color
 honda.spray_paint("black")
 puts honda.color
 puts honda.year
+
+puts honda
+
+puts MyCar.mileage(15, 351)
