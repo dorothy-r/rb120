@@ -18,7 +18,7 @@ class GoodDog
     self.name = n
     self.height = h
     self.weight = w
-    self.age = a * DOG_YEARS
+    self.age = a
   end
 
   def to_s
@@ -42,11 +42,19 @@ class GoodDog
   def what_is_self
     self
   end
+
+  def public_disclosure
+    "#{self.name} in human years is #{human_years}"
+  end
+
+  private
+
+  def human_years
+    age * DOG_YEARS
+  end
 end
 
 
 sparky = GoodDog.new('Sparky', '24 in', '45 lb', 4)
 
-sparky.change_info('Spartacus', '15 in', '20 lb')
-p sparky.what_is_self
-puts sparky
+puts sparky.public_disclosure
