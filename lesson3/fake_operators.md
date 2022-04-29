@@ -158,7 +158,7 @@ class Team
 end
 ```
 
-Now `Team#<<` returns a `Team` object instead of an array.
+Now `Team#+` returns a `Team` object instead of an array.
 
 ## Element setter and getter methods
 

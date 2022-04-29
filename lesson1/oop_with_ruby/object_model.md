@@ -74,7 +74,7 @@ rose = FloweringPlant.new
 2. What is a module? What is its purpose? How do we use them with our classes? Create a module for the class you created in exercise 1 and include it properly.
 
 A module is a collection of behaviors that can be shared by more than once class. It allows us to group behaviors that many classes might share, and keep them in one place rather than defining the same methods for each class.
-A module can be used with a class as a mixin, by using the `include` keyword.
+A module can be used with a class as a mixin, by using the `include` method invocation.
 Example:
 
 ```ruby

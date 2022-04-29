@@ -147,7 +147,7 @@ We can also use the double colons (::) after the module name, but the above is p
 In Ruby, this is implemented through the `public`, `private`, and `protected` access modifiers.
 A **public method** is a method that is readily available for the rest of the program to use (you just need to know the class or object name to reference); these methods comprise the class's interface.
 A **private method** is one that does work in the class but doesn't need to be available to the rest of the program. To define a private method, we use the `private` method call: anything below it is private (unless another method is called later to negate it).
-Trying to call a private method from outside the class raises an error. Private methods are only accessible from other methods in the class.
+Trying to call a private method from outside the class raises an error. Private methods are only accessible from other methods in the class, called with the current object.
 Public and private methods are the most common, but **protected methods** can be used for something in-between. We use the `protected` method to create them (works like the `private` method).
 Protected methods are accessible like public methods inside the class. You can also access protected methods in a different instance of the same class. But outside the class, they act like private methods. In practice, they are not used very often.
 

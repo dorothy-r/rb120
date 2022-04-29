@@ -121,7 +121,7 @@ class KrispyKreme
   def to_s
     type = @filling_type ? @filling_type : "Plain"
     topping = "with #{@glazing}" if @glazing
-    "#{type} #{topping}
+    "#{type} #{topping}"
   end
 end
 ```

@@ -6,7 +6,7 @@ When defining a class, we focus on _states_ and _behaviors_.
 States keep track of an object's attributes. We use instance variables to store this information.
 Instance variables keep track of state
 Behaviors are what objects can do. Instance methods define these behaviors.
-Instance methods expose behvior for objects.
+Instance methods expose behavior for objects.
 
 ## Initializing a New Object
 
@@ -77,17 +77,17 @@ attr_accessor :name, :height, :weight
 
 We can also use getter and setter methods from within the class.
 It is actually prefeable to use these methods rather than reference an instance variable directly--even though it is available within the class.
-One instance where this doesn't work (without some changes) is when we create a method that allows us to change several states at once, like this:
+One instance where this doesn't work (without some changes) is when we create a method that allows us to change an object's state using setter methods, like this:
 
 ```ruby
 def change_info(n, h, w)
   name = n
-  height - h
+  height = h
   weight = w
 end
 ```
 
-Ruby thinks that we are initializing local variables here instead of calling setting methods.
+Ruby thinks that we are initializing local variables here instead of calling setter methods.
 
 ### Calling Methods with self
 

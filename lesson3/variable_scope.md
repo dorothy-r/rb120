@@ -138,4 +138,26 @@ bob.name                        # => "Ms bob" (output will vary)
 ```
 
 Within one class, the rules for accessing constants are pretty easy: a constant is available in class methods and instance methods (which implies it's also accessible from objects).
+If we try to reference a constant from an unconnected class, a `NameError` is thrown; an unrelated class is not part of the lexical scope, so Ruby will not look for the constant there.
+We can reference a constant from a different class by using that class name followed by the namespace resolution operator (`::`).
+
+```ruby
+class Computer
+  GREETINGS = ["Beep", "Boop"]
+end
+
+class Person
+  def self.greetings
+    Computer::GREETINGS.join(', ')
+  end
+
+  def greet
+    Computer::GREETINGS.sample
+  end
+end
+
+puts Person.greetings # => "Beep, Boop"
+puts Person.new.greet # => "Beep"
+```
+
 Things get trickier when inheritance is involved; that's when it is important to remember that constants have _lexical_ scope. We'll cover that in the next section.

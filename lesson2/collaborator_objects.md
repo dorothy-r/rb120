@@ -65,7 +65,7 @@ bob.pet.speak  # => "bark!"
 bob.pet.fetch  # => "fetching!"
 ```
 
-Objects that are stored as state within another object are called **collaborator objects**. So, we would say that `bob` has a collaborator object store in the `@pet` variable.
+Objects that are stored as state within another object are called **collaborator objects**. So, we would say that `bob` has a collaborator object stored in the `@pet` variable.
 Technically, any object stored in another object's instance variable is a collaborator object (even the String object stored in `@name`), but we usually use the term to refer to custom objects, not those inherited from the Ruby core library.
 Collaborator objects are important in OOP, since they represent the connections between classes in a program. It is important to consider the collaborators our custom classes will have, and whether they make sense both technically and conceptually.
 Here's an updated version of the code above that allows an instance of the `Person` class to have multiple pets, stored in an array of `Pet` objects:
